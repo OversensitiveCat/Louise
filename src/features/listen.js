@@ -7,14 +7,13 @@ const listen = (function () {
   gsap.from('#ecouter-heading', {
     scrollTrigger: {
       trigger: '#ecouter',
-      start: 'top 80%',
-      end: 'top 40%',
+      start: 'top 90%',
+      end: 'top 50%',
       scrub: true,
     },
-    xPercent: -50,
+    xPercent: -40,
     yPercent: 100,
-    autoAlpha: 0,
-    duration: 2,
+    opacity: 0,
   })
 
   let videosDiv = gsap.utils.toArray('.video-div')
@@ -28,15 +27,12 @@ const listen = (function () {
       },
       yPercent: 25,
       opacity: 0,
-      duration: 1,
     })
   })
 
   let mm = gsap.matchMedia()
   // DESKTOP
   mm.add('(min-width: 992px)', () => {
-    //// VIDEO HOVER
-
     const links = gsap.utils.toArray('.titre-video')
     links.forEach((link) => {
       gsap.from(link, {

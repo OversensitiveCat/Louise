@@ -1,8 +1,8 @@
 import Lenis from '@studio-freight/lenis'
 
 const lenis = new Lenis({
-  duration: 1.75,
-  wheelMultiplier: 1.35,
+  duration: 1.6,
+  wheelMultiplier: 1.3,
   touchMultiplier: 3,
 })
 

@@ -10,6 +10,7 @@ import { lenis, setLenis } from './features/lenis'
 import listen from './features/listen'
 import nav from './features/nav'
 import navMob from './features/nav-mobile'
+import quote from './features/quote'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -25,6 +26,7 @@ enter
 nav
 navMob
 bio
+quote
 events
 listen
 footer

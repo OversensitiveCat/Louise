@@ -4,43 +4,47 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const events = (function () {
-  /// CONCERTS
+  // Next
   gsap.from('#concert-heading1', {
     scrollTrigger: {
       trigger: '.concerts',
-      start: 'top 60%',
-      end: 'top 25%',
+      start: 'top 80%',
+      end: 'top 30%',
       scrub: true,
     },
-    xPercent: -50,
+    xPercent: -40,
     yPercent: 100,
-    autoAlpha: 0,
-    duration: 2,
+    opacity: 0,
   })
 
   gsap.from('#concert-heading2', {
     scrollTrigger: {
       trigger: '.concerts',
-      start: 'top 50%',
-      end: 'top 20%',
+      start: 'top 80%',
+      end: 'top 30%',
       scrub: true,
     },
     xPercent: -50,
     yPercent: 100,
-    autoAlpha: 0,
-    duration: 2,
+    opacity: 0,
   })
 
-  gsap.to('.photo-concerts', {
+  gsap.from('.photo-concerts', {
     scrollTrigger: {
       trigger: '.concerts',
-      start: 'top center',
-      end: 'bottom bottom',
+      start: 'top 90%',
+      end: 'center 60%',
       scrub: true,
     },
-    opacity: 1,
-    duration: 2,
-    top: '50%',
+    opacity: 0,
+  })
+
+  ScrollTrigger.create({
+    trigger: '.concerts',
+    start: 'top top',
+    end: 'bottom 75%',
+    scrub: true,
+    pin: '.photo-concerts',
   })
 
   const collectionItems = gsap.utils.toArray('#collection > div')
@@ -49,78 +53,49 @@ const events = (function () {
       scrollTrigger: {
         trigger: item,
         start: 'center bottom',
-        end: 'top 65%',
+        end: 'top 70%',
         scrub: true,
       },
-      yPercent: 60,
-      xPercent: -20,
-      autoAlpha: 0,
-      duration: 2,
+      yPercent: 50,
+      xPercent: -15,
+      opacity: 0,
     })
   })
 
-  /// TITRE CONCERTS PASSÉS
+  // Past
   gsap.from('#past-concert-heading1', {
     scrollTrigger: {
       trigger: '.concerts-passes',
-      start: 'top 80%',
+      start: 'top 90%',
       end: 'top 40%',
       scrub: true,
     },
-    xPercent: -50,
-    autoAlpha: 0,
-    duration: 2,
+    xPercent: -25,
+    opacity: 0,
   })
 
   gsap.from('#past-concert-heading2', {
     scrollTrigger: {
       trigger: '.concerts-passes',
-      start: 'top 75%',
+      start: 'top 85%',
       end: 'top 40%',
       scrub: true,
     },
-    xPercent: -50,
-    autoAlpha: 0,
-    duration: 2,
+    xPercent: -25,
+    opacity: 0,
   })
 
-  let mm = gsap.matchMedia()
-  /// ONLY DESKTOP
-  mm.add('(min-width: 992px)', () => {
-    const pastCollectionItems = gsap.utils.toArray('#collection-past > div')
-    pastCollectionItems.forEach((item) => {
-      gsap.from(item, {
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 85%',
-          end: 'top 55%',
-          scrub: 1,
-        },
-        yPercent: 80,
-        autoAlpha: 0,
-        duration: 2,
-      })
-    })
-  })
-
-  /// MOBILE && TABLET
-  mm.add('(max-width: 991px)', () => {
-    //// PAST COLLECTION
-    const pastCollectionItems = gsap.utils.toArray(
-      '#collection-past-mobile > div'
-    )
-    pastCollectionItems.forEach((item) => {
-      gsap.from(item, {
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 85%',
-          end: 'top 55%',
-          scrub: true,
-        },
-        yPercent: 80,
-        autoAlpha: 0,
-        duration: 2,
-      })
+  const pastCollectionItems = gsap.utils.toArray('.past-collection > div')
+  pastCollectionItems.forEach((item) => {
+    gsap.from(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: 'top 90%',
+        end: 'top 60%',
+        scrub: 1,
+      },
+      yPercent: 10,
+      opacity: 0,
     })
   })
 })()
