@@ -11,6 +11,7 @@ import listen from './features/listen'
 import nav from './features/nav'
 import navMob from './features/nav-mobile'
 import quote from './features/quote'
+import hover from './features/reste'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -29,8 +30,5 @@ bio
 quote
 events
 listen
+hover
 footer
-
-// TO DO list
-// clean listen, events, bio
-// hover effects (reste.js) in webflow ?
