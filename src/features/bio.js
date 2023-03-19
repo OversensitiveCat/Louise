@@ -37,8 +37,8 @@ const bio = (function () {
             duration: 1,
             scrollTrigger: {
               trigger: word,
-              start: 'top 90%',
-              end: 'top 80%',
+              start: desktop ? 'top 90%' : 'top 95%',
+              end: desktop ? 'top 80%' : 'top 85%',
               scrub: true,
             },
           }
